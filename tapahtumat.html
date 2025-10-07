@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Antti Jokinen" />
+    <meta
+      name="description"
+      content="Tapahtumat — tulevat kyberturvatapahtumat Suomessa: konferenssit, workshopit ja hackathonit."
+    />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--Estää verkkosivun haravoinnin-->
+    <meta name="robots" content="noindex,nofollow" />
+
+    <title>Kyberpankki — Tapahtumat</title>
+    <link rel="icon" href="/images/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/images/site.webmanifest" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="msapplication-TileImage" content="/images/mstile-150x150.png" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500&family=Source+Code+Pro:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="tapahtumat-sivu">
+    <!-- Sama header kuin etusivulla -->
+    <header class="site-header">
+      <div class="header-inner">
+        <!-- Logo vasemmalla, linkittää etusivulle -->
+        <a class="brand" href="index.html" aria-label="Kyberpankki etusivulle">
+          <img
+            class="kyberpankki-logo"
+            src="https://copilot.microsoft.com/th/id/BCO.3b542d0d-4f02-43cb-a743-acf5c3faab05.png"
+            alt="Kyberpankki_lukko-logo"
+          />
+        </a>
+        <a class="brand" href="index.html" aria-label="Kyberpankki etusivulle">
+          <h1 class="site-title">Kyberpankki</h1>
+        </a>
+        <nav class="nav" aria-label="Päävalikko">
+          <ul class="nav-links" id="navLinksTapahtumat">
+            <li><a href="index.html">Etusivu</a></li>
+            <li>
+              <a href="tapahtumat.html" aria-current="page">Tapahtumat</a>
+            </li>
+            <li><a href="uutiset.html">Uutiset</a></li>
+            <li><a href="vinkit.html">Vinkit</a></li>
+          </ul>
+        </nav>
+        <button
+          id="burgerValikko"
+          class="burger"
+          aria-label="Avaa valikko"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+        >
+          <span class="bar"></span><span class="bar"></span
+          ><span class="bar"></span>
+        </button>
+      </div>
+
+      <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+        <ul>
+          <li><a href="index.html">Etusivu</a></li>
+          <li><a href="tapahtumat.html" aria-current="page">Tapahtumat</a></li>
+          <li><a href="uutiset.html">Uutiset</a></li>
+          <li><a href="vinkit.html">Vinkit</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="page-intro card">
+        <h2 class="hero-title">Tapahtumat</h2>
+        <h3>
+          Lista tulevista kyberturva-tapahtumista. Pääset järjestäjän sivuille
+          painamalla heidän nimeä tai logoa.
+        </h3>
+      </section>
+
+      <div class="cards">
+        <div class="card">
+          <a
+            class="card-title"
+            href="https://disobey.fi"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img
+              class="titlen-logo"
+              src="https://disobey.fi/2026/favicon.ico"
+              alt="Disobey-logo"
+            />
+            Disobey 2026 13-14.2.2026
+          </a>
+          <p>
+            Disobey on vuosittainen tietoturvatapahtuma, jota on järjestetty jo
+            vuodesta 2015 asti. Tapahtumassa pääsee tapaamaan paljon ihmisiä,
+            kuuntelemaan puheita ja testaamaan omia taitojaan CTF-kisoissa.
+          </p>
+        </div>
+        <div class="card">
+          <a
+            class="card-title"
+            href="https://helsec.fi/events/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img
+              class="titlen-logo"
+              src="https://helsec.fi/favicon.png"
+              alt="Helsec-logo"
+            />Helsec-tapahtumat</a
+          >
+          <p>
+            Helsec järjestää säännöllisesti erilaisia tapahtumia, joissa pääsee
+            kuuntelemaan puheita ja nauttimaan hyvästä seurasta. Tapahtumat ovat
+            avoimia kaikille ja ne myös striimataan Twitch-palveluun.
+          </p>
+        </div>
+        <div class="card">
+          <a
+            class="card-title"
+            href="https://cybersecuritynordic.messukeskus.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img
+              class="titlen-logo"
+              src="https://cybersecuritynordic.messukeskus.com/wp-content/uploads/sites/14/2024/08/csn-icon-210x210.webp"
+              alt="Cybernordic-logo"
+            />
+            Cyber Security Nordic 4-5.11.2025
+          </a>
+          <p>
+            Cyber Security Nordic järjestetään Messukeskuksessa, ja sen
+            tavoitteena on koota kaikki alan suurtoimijat samaan tilaisuuteen
+            tarjoamaan ajankohtaista ja mukaansatempaavaa ohjelmaa. Tapahtumassa
+            voi kuunnella esityksiä ja puheita sekä tavata alan ihmisiä ja
+            yrityksiä. Lisäksi tapahtumassa on myös "Hacker's Corner", jossa voi
+            näyttää teknisiä taitojaan.
+          </p>
+        </div>
+        <div class="card">
+          <a
+            class="card-title"
+            href="https://hackjunction.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img
+              class="titlen-logo"
+              src="https://hackjunction.com/lovable-uploads/8bd42612-26ed-4e40-be21-e6270fd45ff5.png"
+              alt="Junction-logo"
+            />
+            Junction 14-16.11.2025
+          </a>
+          <p>
+            Junction on vuosittaisin järjestettävä hackathon-tapahtuma, joka tuo
+            yhteen kehittäjät, suunnittelijat, opiskelijat ja yrittäjät.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer container">
+      <p>© 2025 Kyberpankki</p>
+      <a
+        href="https://www.linkedin.com/in/antti-jokinen-a2a4ba263/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="/images/linkedin_logo.png" alt="linkedin_logo" />
+      </a>
+    </footer>
+
+    <script>
+      (function () {
+        const burger = document.getElementById('burgerValikko');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (!burger || !mobileMenu) return;
+
+        function toggleMenu() {
+          const open = document.documentElement.classList.toggle('nav-open');
+          burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+          mobileMenu.setAttribute('aria-hidden', open ? 'false' : 'true');
+
+          if (open) {
+            const oldClose = document.getElementById('menuClose');
+            if (oldClose) oldClose.remove();
+
+            const closeBtn = document.createElement('button');
+            closeBtn.id = 'menuClose';
+            closeBtn.innerHTML = '✕';
+            closeBtn.setAttribute('aria-label', 'Sulje valikko');
+            closeBtn.style.position = 'absolute';
+            closeBtn.style.top = '12px';
+            closeBtn.style.right = '12px';
+            closeBtn.style.fontSize = '24px';
+            closeBtn.style.background = 'transparent';
+            closeBtn.style.color = 'var(--text)';
+            closeBtn.style.border = 'none';
+            closeBtn.style.cursor = 'pointer';
+            closeBtn.style.zIndex = '101';
+
+            closeBtn.addEventListener('click', () => {
+              document.documentElement.classList.remove('nav-open');
+              burger.setAttribute('aria-expanded', 'false');
+              mobileMenu.setAttribute('aria-hidden', 'true');
+              closeBtn.remove();
+            });
+
+            mobileMenu.appendChild(closeBtn);
+          } else {
+            const existingClose = document.getElementById('menuClose');
+            if (existingClose) existingClose.remove();
+          }
+        }
+
+        burger.addEventListener('click', toggleMenu);
+
+        mobileMenu.addEventListener('click', (e) => {
+          if (e.target.tagName === 'A') {
+            document.documentElement.classList.remove('nav-open');
+            burger.setAttribute('aria-expanded', 'false');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+            const closeBtn = document.getElementById('menuClose');
+            if (closeBtn) closeBtn.remove();
+          }
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            document.documentElement.classList.remove('nav-open');
+            burger.setAttribute('aria-expanded', 'false');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+            const closeBtn = document.getElementById('menuClose');
+            if (closeBtn) closeBtn.remove();
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Antti Jokinen" />
+    <meta
+      name="description"
+      content="Hyödyllisiä vinkkejä ja ohjeita kyberturvallisuuteen: tietomurrot, good practices yms"
+    />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--Estää verkkosivun haravoinnin-->
+    <meta name="robots" content="noindex,nofollow" />
+
+    <title>Kyberpankki — Vinkit</title>
+    <link rel="icon" href="/images/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/images/site.webmanifest" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="msapplication-TileImage" content="/images/mstile-150x150.png" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500&family=Source+Code+Pro:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="vinkit-sivu">
+    <header class="site-header">
+      <div class="header-inner">
+        <!-- Logo vasemmalla, linkittää etusivulle -->
+        <a class="brand" href="index.html" aria-label="Kyberpankki etusivulle">
+          <img
+            class="kyberpankki-logo"
+            src="https://copilot.microsoft.com/th/id/BCO.3b542d0d-4f02-43cb-a743-acf5c3faab05.png"
+            alt="Kyberpankki_lukko-logo"
+          />
+        </a>
+        <a class="brand" href="index.html" aria-label="Kyberpankki etusivulle">
+          <h1 class="site-title">Kyberpankki</h1>
+        </a>
+        <nav class="nav" aria-label="Päävalikko">
+          <ul class="nav-links" id="navLinksVinkit">
+            <li><a href="index.html">Etusivu</a></li>
+            <li><a href="tapahtumat.html">Tapahtumat</a></li>
+            <li><a href="uutiset.html">Uutiset</a></li>
+            <li><a href="vinkit.html" aria-current="page">Vinkit</a></li>
+          </ul>
+        </nav>
+        <button
+          id="burgerValikko"
+          class="burger"
+          aria-label="Avaa valikko"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+        >
+          <span class="bar"></span><span class="bar"></span
+          ><span class="bar"></span>
+        </button>
+      </div>
+
+      <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+        <ul>
+          <li><a href="index.html">Etusivu</a></li>
+          <li><a href="tapahtumat.html">Tapahtumat</a></li>
+          <li><a href="uutiset.html">Uutiset</a></li>
+          <li><a href="vinkit.html" aria-current="page">Vinkit</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="page-intro card">
+        <h2 class="hero-title">Vinkit</h2>
+        <h3>
+          Käytännön vinkkejä yksityisille henkilöille ja pienille yrityksille.
+        </h3>
+      </section>
+
+      <div class="cards">
+        <article class="card">
+          <h3 class="card-title">Huijausviestit ja -puhelut</h3>
+          <div class="pre-yhdistys">
+            <p>Kun saat kiireisen kuuloisen puhelun tai viestin, pysähdy:</p>
+            <p>• Miksi minuun on otettu yhteyttä?</p>
+            <p>• Älä klikkaa linkkejä äläkä avaa liitteitä.</p>
+            <p>
+              • Tarkista viestin lähettäjä — onko sähköpostiosoite tai
+              puhelinnumero aito?
+            </p>
+            <p>
+              • Miksi minun pitäisi antaa henkilökohtaisia tietoja
+              yhteydenottajalle?
+            </p>
+            <p>
+              • Ota näyttökuvat viestistä ja/tai muistiin soittajan numero ja
+              soittoaika.
+            </p>
+            <p>Ilmoittaminen ja tuki:</p>
+            <p>
+              • Ilmoita tietoturvaloukkauksesta / huijausyrityksestä Traficomin
+              Kyberturvallisuuskeskukselle.
+            </p>
+            <p>
+              • Jos toiminta vaikuttaa rikolliselta tai olet menettänyt rahaa,
+              tee rikosilmoitus poliisille verkossa.
+            </p>
+            <p>
+              • Harkitse yhteydenottoa Rikosuhripäivystykseen, jos tarvitset
+              tukea tai neuvontaa.
+            </p>
+            <div class="ilmoituslinkit">
+              <a
+                class="btn"
+                href="https://www.kyberturvallisuuskeskus.fi/fi/ilmoita"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Ilmoita Kyberturvallisuuskeskukselle"
+                >Ilmoita Kyberturvallisuuskeskukselle</a
+              >
+              <a
+                class="btn"
+                href="https://poliisi.fi/tee-rikosilmoitus"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Tee rikosilmoitus poliisille"
+                >Tee rikosilmoitus</a
+              >
+              <a
+                class="btn"
+                href="https://www.riku.fi/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Rikosuhripäivystys RIKU"
+                >Hae tukea (RIKU)</a
+              >
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <h3 class="card-title">Yrityksen tietoturvapoikkeama</h3>
+          <p>
+            Yrityksien tietoturvapoikkeamat yleistyvät digitalisaation ohella.
+            Suomessa on useita toimijoita, jotka myyvät forensista tutkintaa
+            yksityisille yrityksille.
+          </p>
+          <p>
+            Tässä hyvä lista toimijoista:
+            <a href="https://dfir.fi/">https://dfir.fi/</a>
+            (creds to Juho Jauhiainen)
+          </p>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer container">
+      <p>© 2025 Kyberpankki</p>
+      <a
+        href="https://www.linkedin.com/in/antti-jokinen-a2a4ba263/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="/images/linkedin_logo.png" alt="linkedin_logo" />
+      </a>
+    </footer>
+
+    <script>
+      (function () {
+        const burger = document.getElementById('burgerValikko');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (!burger || !mobileMenu) return;
+
+        function toggleMenu() {
+          const open = document.documentElement.classList.toggle('nav-open');
+          burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+          mobileMenu.setAttribute('aria-hidden', open ? 'false' : 'true');
+
+          if (open) {
+            const oldClose = document.getElementById('menuClose');
+            if (oldClose) oldClose.remove();
+
+            const closeBtn = document.createElement('button');
+            closeBtn.id = 'menuClose';
+            closeBtn.innerHTML = '✕';
+            closeBtn.setAttribute('aria-label', 'Sulje valikko');
+            closeBtn.style.position = 'absolute';
+            closeBtn.style.top = '12px';
+            closeBtn.style.right = '12px';
+            closeBtn.style.fontSize = '24px';
+            closeBtn.style.background = 'transparent';
+            closeBtn.style.color = 'var(--text)';
+            closeBtn.style.border = 'none';
+            closeBtn.style.cursor = 'pointer';
+            closeBtn.style.zIndex = '101';
+
+            closeBtn.addEventListener('click', () => {
+              document.documentElement.classList.remove('nav-open');
+              burger.setAttribute('aria-expanded', 'false');
+              mobileMenu.setAttribute('aria-hidden', 'true');
+              closeBtn.remove();
+            });
+
+            mobileMenu.appendChild(closeBtn);
+          } else {
+            const existingClose = document.getElementById('menuClose');
+            if (existingClose) existingClose.remove();
+          }
+        }
+
+        burger.addEventListener('click', toggleMenu);
+
+        mobileMenu.addEventListener('click', (e) => {
+          if (e.target.tagName === 'A') {
+            document.documentElement.classList.remove('nav-open');
+            burger.setAttribute('aria-expanded', 'false');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+            const closeBtn = document.getElementById('menuClose');
+            if (closeBtn) closeBtn.remove();
+          }
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            document.documentElement.classList.remove('nav-open');
+            burger.setAttribute('aria-expanded', 'false');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+            const closeBtn = document.getElementById('menuClose');
+            if (closeBtn) closeBtn.remove();
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

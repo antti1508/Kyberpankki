@@ -1,0 +1,738 @@
+/* style.css
+   Teema: tummanvihreä, musta, lila ja tummansininen + neon-korostuksia*/
+
+:root {
+  --bg-black: #020203;
+  --dark-green: #0f3d2e; /* tumma vihreä */
+  --dark-blue: #0a1a40; /* tumma sininen */
+  --purple: #4b0082; /* violetti */
+  --neon-green: #39ff14; /* korostus */
+  --neon-purple: #a020f0; /* korostus */
+  --neon-cyan: #00ffff;
+  --muted: #bfc7d6;
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --glass: rgba(255, 255, 255, 0.02);
+  --radius: 12px;
+  --max-width: 1200px;
+  --text: #ffffff;
+  --blue: #3474ff;
+}
+
+/* Sivukohtaiset korostusvärit */
+body.etusivu {
+  --accent: var(--neon-green);
+  --accent-2: var(--neon-cyan);
+}
+body.uutiset-sivu {
+  --accent: var(--neon-cyan);
+  --accent-2: var(--neon-purple);
+}
+body.tapahtumat-sivu {
+  --accent: var(--neon-purple);
+  --accent-2: var(--neon-green);
+}
+
+body.vinkit-sivu {
+  --accent: var(--blue);
+  --accent-2: var(--neon-green);
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  min-height: 100%;
+  background: linear-gradient(180deg, var(--dark-blue), #030306 100%);
+  background-attachment: scroll;
+  background-size: auto;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  font-family: 'Roboto', system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.18s ease, transform 0.08s ease;
+}
+a:hover {
+  color: rgba(31, 9, 226, 0.973);
+} /* nappi muuttuu tummansiniseksi */
+
+/* Sisällön keskitys */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+/* HEADER ja NAV */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.45), rgba(5, 5, 10, 0.25));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(6px);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text);
+}
+.kyberpankki-logo {
+  width: 80px;
+  height: 80px;
+  margin-right: 0px;
+  vertical-align: middle;
+}
+
+.site-title {
+  font-family: 'Orbitron', 'Audiowide', sans-serif;
+  font-size: 28px;
+  color: var(--accent);
+  letter-spacing: -0.5px;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+.site-title .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.site-title .brand:focus,
+.site-title .brand:hover {
+  outline: none;
+  text-decoration: none;
+}
+/*Opiskelu korttien tyyli indexhtml sivulla*/
+/* Poista details-marker */
+.practice-card > summary::-webkit-details-marker {
+  display: none;
+}
+.practice-card > summary::marker {
+  display: none;
+}
+.practice-card > summary::-moz-list-bullet {
+  display: none;
+}
+
+/* Summary täyttää kortin — koko kortti klikattava */
+.practice-card > summary {
+  display: block;
+  cursor: pointer;
+  padding: 14px;
+  box-sizing: border-box;
+  user-select: none;
+  border-radius: calc(var(--radius) - 2px);
+}
+
+/* Otsikkoasettelu summaryssa */
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.card-head h4 {
+  margin: 0;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.02rem;
+}
+
+/* Pieni indikaattori (piilotetaan kun overlay auki) */
+.card-indicator {
+  color: var(--muted);
+  transition: transform 260ms ease, color 260ms ease;
+  font-size: 35px;
+}
+
+/* Peruskortti (static-tila sivulla) */
+.practice-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(0, 0, 0, 0.02)
+  );
+  border-radius: var(--radius);
+  padding: 8px;
+  box-shadow: 0 8px 30px rgba(2, 2, 3, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transition: transform 260ms cubic-bezier(0.2, 0.9, 0.2, 1),
+    box-shadow 260ms ease, border-color 260ms ease;
+  transform-origin: center;
+  overflow: visible;
+  margin-bottom: 18px;
+}
+
+/* Teaser-teksti ja body */
+.practice-card .card-body {
+  padding: 12px 12px 18px;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 380ms ease, opacity 260ms ease;
+}
+
+/* Näytä lyhyt esiteaser summaryn alla (ilman aukioloa) */
+.practice-card summary + .card-body p:first-of-type {
+  max-height: 3.6em;
+  overflow: hidden;
+  color: var(--muted);
+}
+
+/* Hover tarjoaa pienen nosteen */
+.practice-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 18px 48px rgba(2, 2, 3, 0.6);
+}
+
+.practice-card.open-overlay {
+  position: fixed;
+  height: calc(100vh - 6vh);
+  border-radius: calc(var(--radius) + 6px);
+  padding: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 6, 10, 0.98),
+    rgba(3, 6, 15, 0.98)
+  );
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+  transition: transform 260ms cubic-bezier(0.2, 0.9, 0.2, 1),
+    box-shadow 260ms ease;
+  transform: translateY(-6px) scale(1.01);
+  box-sizing: border-box;
+  inset: 3vh 3vw;
+  width: auto;
+  max-width: calc(100% - 6vw);
+  margin: 0 auto; /* keskittää kortin */
+}
+
+.practice-card.open-overlay * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.practice-card.open-overlay img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+/* Tabletit (768px – 1024px) */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .practice-card.open-overlay {
+    inset: 4vh 6vw;
+    width: auto;
+    max-width: calc(100% - 12vw);
+    height: calc(100vh - 8vh);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    overflow-y: auto;
+  }
+}
+
+/* --- Responsiivisuus puhelimille --- */
+@media (max-width: 768px) {
+  .practice-card.open-overlay {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    padding: 16px;
+    box-shadow: none;
+    transform: none;
+    overflow-y: auto; /* sallii sisällön vierittämisen */
+    inset: 3vh 4vw;
+    width: auto;
+    max-width: calc(100% - 8vw);
+  }
+}
+
+/* Kun overlay auki — indicator pyörähtää ja piilotetaan tekstiä */
+.practice-card.open-overlay .card-indicator {
+  transform: rotate(180deg);
+  color: var(--text);
+}
+
+/* Näytä body kokonaan overlay-tilassa*/
+.practice-card.open-overlay .card-body {
+  max-height: none;
+  opacity: 1;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  flex: 1 1 auto;
+}
+/* Poista teaserin "fade" overlay-tilassa */
+.practice-card.open-overlay summary + .card-body p:first-of-type {
+  max-height: none;
+  color: var(--text);
+}
+/* Lisää sulkupainike tyylinä */
+.practice-card .close-overlay {
+  align-self: flex-end;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--muted);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 160ms ease, background 180ms ease, color 160ms ease;
+  right: 18px;
+  bottom: 18px;
+  z-index: 1;
+}
+
+.practice-card .close-overlay:hover {
+  transform: translateY(-3px);
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.practice-card::after {
+  display: none;
+}
+.card-image {
+  width: 700px;
+}
+
+body.lock-scroll {
+  overflow: hidden;
+}
+
+/* Keyboard-focus näkyväksi */
+.practice-card:focus-within {
+  outline: 3px solid rgba(107, 93, 246, 0.08);
+  outline-offset: 6px;
+}
+
+/* NAV - desktop */
+.nav {
+  margin-left: auto;
+}
+.nav-links {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  display: inline-block;
+  transition: all 0.6s ease;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+  background: linear-gradient(90deg, rgba(31, 9, 226, 0.973), rgb(5, 59, 235));
+  transform: translateY(-1px);
+  box-shadow: 0 0 10px rgba(31, 9, 226, 0.4), 0 0 20px rgba(5, 59, 235, 0.3);
+}
+
+/* Burgervalikko */
+.burger {
+  display: none;
+  margin-left: 12px;
+  width: 44px;
+  height: 36px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(0, 0, 0, 0.08)
+  );
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  padding: 8px;
+}
+.burger .bar {
+  display: block;
+  width: 60%;
+  max-width: 30px;
+  height: 3px;
+  background-color: var(--text);
+  margin: 3px auto;
+  border-radius: 2px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+/*hover valikolle*/
+.burger:hover .bar {
+  background-color: var(--accent);
+}
+/* Mobiilivalikko*/
+.mobile-menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 72px;
+  background: linear-gradient(180deg, rgba(2, 6, 8, 0.7), rgba(3, 5, 10, 0.7));
+  border-top: 1px solid rgba(255, 255, 255, 0.02);
+  padding: 14px 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  transition: top 0.3s ease;
+}
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mobile-menu a {
+  padding: 8px 8px;
+  border-radius: 8px;
+  color: var(--muted);
+}
+.mobile-menu a:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.nav-open .mobile-menu {
+  display: block;
+  top: 0;
+}
+
+#menuClose {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 24px;
+  background: transparent;
+  color: var(--accent);
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 101;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#menuClose:hover {
+  color: var(--accent-2);
+  transform: scale(1.2) rotate(90deg);
+}
+
+.main {
+  padding: 28px 0 48px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.hero {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+  padding: 18px;
+  border-radius: var(--radius);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  box-shadow: 0 18px 40px rgba(2, 4, 8, 0.6);
+}
+.hero-left {
+  flex: 1;
+  padding: 8px;
+}
+
+.hero-title {
+  margin: 0 0 8px 0;
+  font-family: 'Orbitron', 'Audiowide', sans-serif;
+  font-size: 32px;
+  color: var(--accent);
+}
+.lead {
+  color: var(--muted);
+  margin: 0 0 12px 0;
+}
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  border: var(--dark-blue) 1px solid;
+}
+.btn:hover {
+  background-color: rgba(42, 42, 44, 0.075);
+}
+.btn-primary {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #061016;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 18px;
+  margin-top: 18px;
+  padding: 0 18px;
+}
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  color: var(--muted);
+  box-shadow: inset 0 -6px 24px rgba(0, 0, 0, 0.6);
+}
+.card-title {
+  margin: 0 0 8px 0;
+  font-family: 'Orbitron', sans-serif;
+  color: var(--accent);
+  font-size: 20px;
+}
+
+.titlen-logo {
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+  vertical-align: middle;
+  border: 2px solid rgba(255, 255, 255, 0.03);
+}
+.section-title {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--accent-2);
+  margin: 0 0 10px 0;
+}
+.muted {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Nappien säätö rivittäin, gapilla */
+.ilmoituslinkit {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Yhdenmukainen btn-primary-tyyli tekstiboksin nappeihin */
+.ilmoituslinkit .btn.btn-primary {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(11, 6, 32, 0.6);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px 14px;
+  transition: transform 0.2s ease;
+}
+.ilmoituslinkit .btn.btn-primary:hover {
+  transform: translateY(-2px);
+}
+.site-footer {
+  padding: 20px 0;
+  text-align: center;
+  color: #8891a0;
+}
+
+@media (max-width: 900px) {
+  .site-title,
+  .hero-title,
+  .card-title {
+    text-align: center;
+  }
+  .header-inner {
+    display: flex;
+    flex-direction: row; /* rinnakkaiset elementit */
+    align-items: center;
+    justify-content: space-between; /* brand vasemmalle, burger oikealle */
+    padding: 0px 15px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+  .burger {
+    display: block;
+    margin: 0;
+  }
+
+  /* Hero: keskitetään teksti ja kavennetaan */
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 12px;
+  }
+  .hero-left {
+    width: 100%;
+  }
+  .hero-title {
+    font-size: 28px;
+    line-height: 1.3;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Main/container pitää paddingit, mutta kavennetaan max-width */
+  .main {
+    padding: 24px 0;
+  }
+  .container {
+    padding: 0 12px;
+  }
+  /* Cards: puretaan grid ja pinotaan kortit keskelle */
+  .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 0 12px;
+    margin-top: 18px;
+  }
+  .card {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  /* Footer: teksti keskelle */
+  .site-footer .container {
+    text-align: center;
+    padding: 12px;
+  }
+
+  .practice-card.open-overlay {
+    inset: 2vh 2vw;
+    padding: 14px;
+    border-radius: 10px;
+    height: calc(100vh - 4vh);
+  }
+  .practice-card > summary {
+    padding: 12px;
+  }
+  .practice-card .close-overlay {
+    padding: 8px 10px;
+  }
+  .practice-cards {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .practice-card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .site-title {
+    font-size: 20px;
+  }
+  .hero-title {
+    font-size: 26px;
+  }
+  .site-title,
+  .hero-title,
+  .card-title {
+    text-align: center;
+  }
+  .header-inner {
+    display: flex;
+    flex-direction: row; /* rinnakkaiset elementit */
+    align-items: center;
+    justify-content: space-between; /* brand vasemmalle, burger oikealle */
+    padding: 0px 15px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+  .burger {
+    display: block;
+    margin: 0;
+  }
+
+  /* Hero: keskitetään teksti ja kavennetaan */
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 12px;
+  }
+  .hero-left {
+    width: 100%;
+  }
+  .hero-title {
+    font-size: 28px;
+    line-height: 1.3;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Main/container pitää paddingit, mutta kavennetaan max-width */
+  .main {
+    padding: 24px 0;
+  }
+  .container {
+    padding: 0 12px;
+  }
+  /* Cards: puretaan grid ja pinotaan kortit keskelle */
+  .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 0 12px;
+    margin-top: 18px;
+  }
+  .card {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  /* Footer: teksti keskelle */
+  .site-footer .container {
+    text-align: center;
+    padding: 12px;
+  }
+
+  .practice-cards {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .practice-card {
+    max-width: 100%;
+  }
+}

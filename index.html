@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Antti Jokinen" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Kyberpankin etusivusto, josta voi navigoida alisivuille."
+    />
+    <meta name="keywords" content="kyber, tietoturva, kyberturva, etusivu" />
+    <!--Estää verkkosivun haravoinnin-->
+    <meta name="robots" content="noindex,nofollow" />
+
+    <title>Kyberpankki — Etusivu</title>
+    <link rel="icon" href="/images/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/images/site.webmanifest" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="msapplication-TileImage" content="/images/mstile-150x150.png" />
+    <meta name="msapplication-TileColor" content="#000000" />
+
+    <!-- Googlen fontit -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500&family=Source+Code+Pro:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tyylit (yksi tiedosto kaikille sivuille) -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="etusivu">
+    <!-- HEADER / NAV -->
+    <header class="site-header">
+      <div class="header-inner">
+        <!-- Logo vasemmalla, painamalla takaisin etusivulle -->
+        <a
+          class="site-title"
+          href="index.html"
+          aria-label="Kyberpankki etusivulle"
+        >
+        </a>
+        <img
+          class="kyberpankki-logo site-title"
+          src="https://copilot.microsoft.com/th/id/BCO.3b542d0d-4f02-43cb-a743-acf5c3faab05.png"
+          alt="Kyberpankki_lukko-logo"
+        />
+        <h1 class="site-title">Kyberpankki</h1>
+
+        <!-- Päävalikko (desktop) - lisätty Etusivu -->
+        <nav class="nav" aria-label="Päävalikko">
+          <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" aria-current="page">Etusivu</a></li>
+            <li><a href="tapahtumat.html">Tapahtumat</a></li>
+            <li><a href="uutiset.html">Uutiset</a></li>
+            <li><a href="vinkit.html">Vinkit</a></li>
+          </ul>
+        </nav>
+
+        <!-- Burger-painike (oikealla) -->
+        <button
+          id="burgerValikko"
+          class="burger"
+          aria-label="Avaa valikko"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+        >
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+      <!-- Mobile menu (piilotettu, näkyy burgerillä) -->
+      <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+        <ul>
+          <li><a href="index.html" aria-current="page">Etusivu</a></li>
+          <li><a href="tapahtumat.html">Tapahtumat</a></li>
+          <li><a href="uutiset.html">Uutiset</a></li>
+          <li><a href="vinkit.html">Vinkit</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- HERO / ESITTELY -->
+    <main class="main">
+      <section class="hero card">
+        <div class="hero-left">
+          <h2 class="hero-title">Tervetuloa Kyberpankkiin!</h2>
+          <h3>
+            Tämä sivusto on perustettu henkilökohtaiseksi portfolioksi, mutta se
+            sisältää myös ajankohtaista tietoa kyberturvasta uutisten ja
+            vinkkien muodossa.
+          </h3>
+        </div>
+      </section>
+      <!-- Korteissa kerrotaan itsestäni ja osaamisestani-->
+      <div class="cards">
+        <article class="card">
+          <h3 class="card-title">Tietoa minusta</h3>
+          <p>
+            Nimeni on Antti Jokinen ja olen erittäin kiinnostunut
+            kyberturvallisuudesta. Halusin luoda nettisivun, josta saisi
+            ajankohtaista tietoa tulevista tapahtumista, sekä samalla jakaa
+            joitain mahdollisia vinkkejä ja uutisia.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">Osaamiseni</h3>
+          <p>
+            Osaamiseni koostuu harrastuneisuudesta ja asioista joita olen
+            oppinut töissä, sekä koulussa. Tällä hetkellä osaamiseni painottuu
+            "Blue team" puolelle eli puolustavaan kyberturvallisuuteen.
+            Ajanmittaan minulle on tullut kuitenkin osaamista usealta eri
+            osa-alueelta, kuten tietoverkoista ja "Red teamingistä" eli
+            hyökkäävän puolen tietoturvasta.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">Sivuston tarkoitus</h3>
+          <p>
+            Pidän oppimispäiväkirjaa, sekä kerään tapahtumat ja uutiset yhdelle
+            verkkosivustolle. Sivustolla minun on myös tarkoitus näyttää
+            osaamistani, eli sivusto toimii myös portfoliona.
+          </p>
+        </article>
+
+        <!-- Missä harjoitella -osio, sisältää 3 korttia -->
+        <section class="card practice-section" aria-labelledby="practice-title">
+          <h3 id="practice-title" class="card-title">
+            Missä harjoitella tieto- ja kyberturvallisuutta?
+          </h3>
+
+          <div class="practice-cards">
+            <details class="practice-card" data-provider="tryhackme">
+              <summary>
+                <span>
+                  <strong>TryHackMe</strong> — Loistava verkkosivusto
+                  aloittelijoille. Sivustolta löytyy myös haastavampia
+                  kokonaisuuksia.
+                </span>
+              </summary>
+              <div class="card-body">
+                <p>
+                  TryHackMe tarjoaa opastettuja polkuja, labroja, King of The
+                  hill pelimuodon ja vaihtelevia tapahtumia, jotka selittävät
+                  tehtävän vaiheet askel askeleelta. Hyvä valinta, kun haluat
+                  oppia käytännössä ja tehdä tehtäviä turvallisessa
+                  virtuaaliympäristössä.
+                </p>
+                <p>
+                  <strong>Mitä tarjoaa:</strong> Blue- ja Redteam opetusta,
+                  Linuxia ja Windowsia, sekä voit myös itse kehittää haasteita.
+                </p>
+                <p>
+                  Alempana kuvaaja TryHackMe verkkosivuston mahdollisista
+                  poluista:
+                </p>
+                <img
+                  src="images/tryhackme_polut.png"
+                  alt="TryHackMe opintopolut"
+                  loading="lazy"
+                  class="card-image"
+                />
+                <p>
+                  <a
+                    href="https://tryhackme.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Avaa TryHackMe →</a
+                  >
+                </p>
+                <button class="close-overlay" aria-label="Sulje">
+                  ✕ Sulje
+                </button>
+              </div>
+            </details>
+
+            <details class="practice-card" data-provider="hackthebox">
+              <summary>
+                <span>
+                  <strong>Hack The Box</strong> — Sopii kaiken tasoisille
+                  kyberturvasta kiinnostuneille.
+                </span>
+              </summary>
+              <div class="card-body">
+                <p>
+                  Hack The Box keskittyy käytännön penetraatiotestaukseen ja
+                  haasteisiin. Hyvä ympäristö kehittyneemmille harjoituksille ja
+                  verkko-/sovellus-skannaukselle.
+                </p>
+                <p>
+                  <strong>Mitä tarjoaa:</strong> Rekisteröitäviä koneita,
+                  lab-ympäristöjä, kilpailuja.
+                </p>
+                <p>
+                  Alempana kuvaaja HackTheBox verkkosivuston mahdollisista
+                  poluista:
+                </p>
+                <img
+                  src="images/htb_polku.png"
+                  alt="HacktheBox_Opintopolku"
+                  loading="lazy"
+                  class="card-image"
+                />
+                <p>
+                  <a
+                    href="https://www.hackthebox.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Avaa Hack The Box →</a
+                  >
+                </p>
+                <button class="close-overlay" aria-label="Sulje">
+                  ✕ Sulje
+                </button>
+              </div>
+            </details>
+
+            <details class="practice-card" data-provider="overthewire">
+              <summary>
+                <span>
+                  <strong>OverTheWire</strong> — Opettaa hyvin Linux
+                  komentoriviä.
+                </span>
+              </summary>
+              <div class="card-body">
+                <p>
+                  OverTheWire tarjoaa CTF tyyppisiä tehtäviä (esim. Bandit),
+                  jotka opettavat Unix-komentoja, skriptausta, salauksen
+                  perusteita.
+                </p>
+                <p>
+                  <strong>Mitä tarjoaa:</strong> Linux ympäristöön liittyviä
+                  tehtäviä, perus- ja edistyneen tason tehtäviä.
+                </p>
+                <p>Alempana kuvaaja OverTheWire verkkosivuston etusivusta:</p>
+                <img
+                  src="images/overthewire_etusivu.png"
+                  alt="Overthewire_etusivu"
+                  loading="lazy"
+                  class="card-image"
+                />
+                <p>
+                  <a
+                    href="https://overthewire.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Avaa OverTheWire →</a
+                  >
+                </p>
+                <button class="close-overlay" aria-label="Sulje">
+                  ✕ Sulje
+                </button>
+              </div>
+            </details>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer container">
+      <p>© 2025 Kyberpankki</p>
+      <a
+        href="https://www.linkedin.com/in/antti-jokinen-a2a4ba263/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="/images/linkedin_logo.png" alt="linkedin_logo" />
+      </a>
+    </footer>
+
+    <!-- JavaScript: burger-toiminnallisuus -->
+    <script>
+      (function () {
+        const burger = document.getElementById('burgerValikko');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (!burger || !mobileMenu) return;
+
+        function toggleMenu() {
+          const open = document.documentElement.classList.toggle('nav-open');
+          burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+          mobileMenu.setAttribute('aria-hidden', open ? 'false' : 'true');
+
+          if (open) {
+            const oldClose = document.getElementById('menuClose');
+            if (oldClose) oldClose.remove();
+
+            const closeBtn = document.createElement('button');
+            closeBtn.id = 'menuClose';
+            closeBtn.innerHTML = '✕';
+            closeBtn.setAttribute('aria-label', 'Sulje valikko');
+            closeBtn.style.position = 'absolute';
+            closeBtn.style.top = '12px';
+            closeBtn.style.right = '12px';
+            closeBtn.style.fontSize = '24px';
+            closeBtn.style.background = 'transparent';
+            closeBtn.style.color = 'var(--text)';
+            closeBtn.style.border = 'none';
+            closeBtn.style.cursor = 'pointer';
+            closeBtn.style.zIndex = '101';
+
+            closeBtn.addEventListener('click', () => {
+              document.documentElement.classList.remove('nav-open');
+              burger.setAttribute('aria-expanded', 'false');
+              mobileMenu.setAttribute('aria-hidden', 'true');
+              closeBtn.remove();
+            });
+
+            mobileMenu.appendChild(closeBtn);
+          } else {
+            const existingClose = document.getElementById('menuClose');
+            if (existingClose) existingClose.remove();
+          }
+        }
+
+        burger.addEventListener('click', toggleMenu);
+
+        mobileMenu.addEventListener('click', (e) => {
+          if (e.target.tagName === 'A') {
+            document.documentElement.classList.remove('nav-open');
+            burger.setAttribute('aria-expanded', 'false');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+            const closeBtn = document.getElementById('menuClose');
+            if (closeBtn) closeBtn.remove();
+          }
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            document.documentElement.classList.remove('nav-open');
+            burger.setAttribute('aria-expanded', 'false');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+            const closeBtn = document.getElementById('menuClose');
+            if (closeBtn) closeBtn.remove();
+          }
+        });
+      })();
+
+      document.addEventListener('DOMContentLoaded', function () {
+        const cards = document.querySelectorAll('details.practice-card');
+        let lastFocused = null;
+
+        cards.forEach((card) => {
+          const summary = card.querySelector('summary');
+          const closeBtn = card.querySelector('.close-overlay');
+
+          card.addEventListener('toggle', (ev) => {
+            if (card.open) {
+              card.classList.add('open-overlay');
+              document.body.classList.add('lock-scroll');
+              summary.setAttribute('aria-expanded', 'true');
+
+              lastFocused = document.activeElement;
+              const focusTarget =
+                card.querySelector('.close-overlay') ||
+                card.querySelector('a') ||
+                summary;
+              focusTarget.focus({ preventScroll: true });
+              setTimeout(() => {
+                card.classList.add('overlay-opened');
+              }, 10);
+            } else {
+              card.classList.remove('open-overlay', 'overlay-opened');
+              document.body.classList.remove('lock-scroll');
+              summary.setAttribute('aria-expanded', 'false');
+              if (lastFocused && typeof lastFocused.focus === 'function') {
+                lastFocused.focus({ preventScroll: true });
+                lastFocused = null;
+              } else {
+                summary.focus({ preventScroll: true });
+              }
+            }
+          });
+
+          if (closeBtn) {
+            closeBtn.addEventListener('click', (e) => {
+              e.preventDefault();
+              card.open = false;
+            });
+          }
+        });
+
+        document.addEventListener(
+          'click',
+          (e) => {
+            const openCard = document.querySelector(
+              'details.practice-card.open-overlay'
+            );
+            if (!openCard) return;
+            if (!openCard.contains(e.target)) {
+              openCard.open = false;
+            }
+          },
+          { capture: true }
+        );
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' || e.key === 'Esc') {
+            const openCard = document.querySelector(
+              'details.practice-card.open-overlay'
+            );
+            if (openCard) {
+              openCard.open = false;
+              e.preventDefault();
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
