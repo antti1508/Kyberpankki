@@ -510,6 +510,7 @@ body.lock-scroll {
   border: 1px solid rgba(255, 255, 255, 0.03);
   color: var(--muted);
   box-shadow: inset 0 -6px 24px rgba(0, 0, 0, 0.6);
+   overflow-wrap: anywhere;
 }
 .card-title {
   margin: 0 0 8px 0;
@@ -736,3 +737,4 @@ body.lock-scroll {
     max-width: 100%;
   }
 }
+
